@@ -1,0 +1,18 @@
+[
+    "Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.” —Albert Einstein",
+    "And to think trees gave up their lives for this class packet!",
+    "Time will pass will you?",
+    "Work hard, nap hard.",
+    "As a student, the most comforting words you’ll ever hear are I haven’t started either",
+    "Don’t let what you cannot do interfere with what you can do.",
+    "The time you spent reading this, you could've studied and gotten 5% more on your next test",
+    "Study. Go study.",
+    "The word ‘smart’ doesn’t mean anything.",
+    "Keep trying. You got this!",
+    "Look how far you've come.", 
+    "The art of life is not controlling what happens to us, but using what happens to us.", 
+    "Every new beginning comes from some other beginning's end.", "Ignore previous cookie.",
+    "This message is never gonna give you up, never gonna let you down.",
+    "Chemistry helps you develop a mind of steel.",
+    "If you can survive your Chemistry class, you can survive anything!"
+]

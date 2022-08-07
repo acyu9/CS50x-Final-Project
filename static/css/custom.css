@@ -1,0 +1,257 @@
+footer {
+    padding: 10px 20px 10px 20px;
+    margin-top:auto; 
+    width:100%;
+    height:70px;   /* Height of the footer */
+    background:lavender;
+}
+
+body {
+    display:flex; 
+    flex-direction:column; 
+}
+
+
+/* For index.html */
+.testimonials {
+    margin: 10px auto;
+}
+
+.testimonials .row {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-md-4 {
+    margin: 40px auto;
+}
+
+.profile {
+    padding: 20px 10px 10px;
+    height: 400px;
+    background-color: floralwhite;
+}
+
+.profile img {
+    position:relative ;
+    border: 5px solid lightpink;
+    padding: 10px 10px 10px 10px;
+    background-color: white;
+}
+
+.profile:hover
+{
+    box-shadow: 0 0  15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.user {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.profile h3 {
+    margin-top: 25px;
+}
+
+span {
+    font-size: 16px;
+    color:royalblue;
+    margin-left: 10px;
+}
+
+blockquote {
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+blockquote::before {
+    content: '\93';
+    font-size: 50px;
+    position: relative;
+    color:lightpink;
+    line-height: 20px;
+    bottom: -15px;
+    right: 5px;
+}
+
+blockquote::after {
+    content: '\94';
+    font-size: 50px;
+    position: relative;
+    color:lightpink;
+    line-height: 10px;
+    bottom: -15px;
+    left: 5px;
+}
+
+
+/* For pomodoro.html */
+#ul_input {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;    
+    list-style-type: none; 
+}
+
+#ul_input input {
+    vertical-align: middle;
+    margin-right: 55px;
+    box-sizing: border-box;
+    padding: 50px;    
+    text-align: center;
+    font-size:2rem;
+    min-width: 0;
+    width: 90%;
+    flex: 1;
+}
+
+
+/* For quiz.html */
+#quiz {
+    text-align: left;
+    margin-left: 100px;
+}
+
+ol {
+    text-align: left;
+    margin-left: 100px;
+}
+
+ol li {
+    font-weight: 400;
+}
+
+ol input {
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+ol input:first-child {
+    margin-left: 0px;
+}
+
+input[type=radio] {
+    width: 18px;
+    height: 18px;
+}
+
+thead, tbody {
+    text-align: left;
+}
+
+th {
+    padding:10px 35px 10px 35px;
+}
+
+tbody td {
+    padding:10px 35px 10px 35px;
+}
+
+
+/* To align pomodoro picture with text */
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* To align pomodoro picture with text */
+.image {
+    flex-basis: 40%;
+    order: 2;
+    width: 100%;
+    height: auto;
+    padding-right: 200px;
+}
+
+/* To align pomodoro picture with text */
+.text {
+    padding-left: 520px;
+}
+
+.image:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+
+/* Shaking scale */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* For chatBot.html */
+.botAvatar, .userAvatar {
+    vertical-align: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    max-width: 60px;
+}
+
+.userAvatar {
+    margin-top: 5px;
+    margin-left: 25px;
+    float: right;
+}
+
+.botAvatar {
+    margin-right: 25px;
+    margin-top: 5px;
+    float: left;
+}
+
+#chatbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+}
+    
+.userText {
+    text-align: right;
+    line-height: 50px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lavendar;
+    background-color: aliceblue;
+}
+
+.botText {
+    text-align: left;
+    line-height: 50px;
+    border-style: solid;
+    border-width: thin;
+    border-color: thistle;
+    background-color: snow;
+}
+
+.input-append input {
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    padding: 10px;
+}
+
+

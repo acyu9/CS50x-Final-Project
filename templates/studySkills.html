@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz Yourself
+{% endblock %}
+
+{% block script %}
+<script>
+    // Run script once DOM (document object model), or entire content of web page, is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        let clickCount = 0;
+
+        for (let i = 0; i < row.length; i++) {
+            row[i].addEventListener('click', function() {
+                clickCount++;
+
+                if (clickCount == 1) {
+                    row[i].style.backgroundColor = 'mediumpurple'
+                }
+                
+                else if (clickCount == 2) {
+                    row[i].style.backgroundColor = '#f3969a'
+                    clickCount = 0;
+                }
+            });
+        };
+    })
+</script>
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Study Skills</th>
+                    <th>Often</th>
+                    <th>Sometimes</th>
+                    <th>Rarely</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in skills %}
+                    <tr>
+                        <td>{{i}}</td>
+                        {% for j in buttons %}
+                            <td><button type="button" class="btn btn-secondary" id="row">{{j}}</button></td> 
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="section">
+        <p><b>SCORING: </b> &emsp; Often = 10 &emsp; Sometimes = 5 &emsp; Rarely = 0</p>
+        <p>A total score of 70% or above: Your study skills seem solid. Keep up the good work!</p>
+        <p>A total score below 70%: You have room for growth!</p>
+    </div>
+</div>
+{% endblock %}

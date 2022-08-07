@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Pomodoro
+{% endblock %}
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+<script type="text/javascript">
+    
+    // This function will be executed after the HTML is loaded
+    $(document).ready(function() {
+
+        // Calculate timer
+        function timer(totalTime) {
+            let totalMinutes = Math.floor(totalTime / 60);
+            let totalSeconds = totalTime % 60;
+
+            let totalHours = 0
+            if(totalMinutes > 60) {
+                totalHours = Math.floor(totalMinutes / 60);
+                totalMinutes = totalTime % 60;
+            }
+
+            // For checking function
+            console.log(totalTime);
+            return [totalSeconds, totalMinutes, totalHours]
+        }
+        
+
+        setInterval(function(){
+            loadTimer()
+        }, 1000)
+
+
+        function loadTimer(){
+
+            // Changing button to button type gets rid of POST & dictionary page
+            // Onsubmit validates form but leads to dictionary page
+            document.getElementById("start_button").onclick = function(e) {
+
+                // Calling preventDefault during any stage of event flow cancels the event
+                e.preventDefault();
+
+                // Validate user inputs
+                if($("#hours").val() == "" || $("#minutes").val() == "" || $("#seconds").val() == ""){
+                    alert("Follow the directions!");
+                }
+
+                if($("#hours").val() < 0 || $("#minutes").val() < 0 || $("#seconds").val() < 0 ){
+                    alert("There is no negative time...");
+                }
+
+                $.ajax({
+                    data : {
+                    seconds : $('#seconds').val(),
+                    minutes : $('#minutes').val(),
+                    hours : $('#hours').val(),
+                    },
+                    type : 'POST',
+                    url : '/pomodoro.html',
+                    dataType : 'JSON',
+
+                    success: function(data) {
+                        // For checking function
+                        console.log(data.hours);
+
+                        let totalTime = data.hours * 3600 + data.minutes * 60 + data.seconds;
+                        console.log(totalTime);
+
+                        let i = 0;
+                        
+                        // Countdown timer
+                        while(totalTime > -1) {
+                            displayTime(i);
+                            i++;
+                            if (i-1 == totalTime) {
+                                break;
+                            }
+                        }
+                        
+                        function displayTime(i) {
+                            setTimeout(function() {
+                                var time = timer(totalTime);
+                                totalTime -= 1
+                                console.log(time[0]);
+
+                                $('#hours').val(time[2]);
+                                $('#minutes').val(time[1]);
+                                $('#seconds').val(time[0]);
+                            }, 1000 * i)
+                        }
+                    } 
+                });
+            };
+
+            document.getElementById("cancel_button").onclick = function(e) {
+                e.preventDefault();
+                alert("Cancel is not an option. Keep studying.")
+            };  
+        };
+    });
+</script>
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2>Directions:</h2>  
+    </div>
+    <div class="box">
+        <div class="image">
+            <img src="{{ url_for('static', filename='pomo2.jpg') }}" style="width:80px;height:auto;" />
+        </div>
+        <div class="text">
+            <p>1. Decide on the task to be done.</p>
+            <p>2. Set the pomodoro (tomato) timer. If you are not sure, try 25 minutes.</p>
+            <p>3. Work on the task, and only the task.</p>
+            <p>4. Take a 5 - 10 minutes break when the timer is up.</p>
+            <p>5. Repeat the process two more times.</p>
+            <p>6. Complete the 4th pomodoro then take a 20 - 30 minutes break.</p>
+            <p>7. Repeat from step 2 until you are done with the task. Good job!</p>
+            <p><b>Note:</b> all boxes need to have a positive number input.</p>
+        </div>  
+    </div>
+
+    <form action='/pomodoro.html' method="POST" class="rows">
+        <div id="buttons_container" class="form-group">
+            <ul id="ul_input">
+                <li><input class="form-control form-control-lg" type="number" id="hours" name="hours" placeholder="Hours" min="0" required /></li>
+                <li><input class="form-control form-control-lg" type="number" id="minutes" name="minutes" placeholder="Minutes" min="0" max="59" required /></li>
+                <li><input class="form-control form-control-lg" type="number" id="seconds" name="seconds" placeholder="Seconds" min="0" max="59" required /></li>
+            </ul>
+        </div>
+
+        <div id="buttons_container">
+            <button id="start_button" type="submit" name="start_button" class="btn btn-secondary">Start</button>
+            <button id="cancel_button" type="submit" name="cancel_button" class="btn btn-secondary">Cancel</button>
+        </div>
+    </form>
+{% endblock %}
+
+        
+

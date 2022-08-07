@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=1020" >
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <link type="text/css" rel="stylesheet" href= "/static/css/mintytheme.css">
+        <link rel="stylesheet" type="text/css" href= "/static/css/custom.css">
+
+        <title>Chemistry: {% block title %}{% endblock %}</title>
+
+        {% block script %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7 col-sm-6"> <br>
+                        <h1>Hello World</h1>
+                    </div>
+                    <div class="col-lg-8 col-md-7 col-sm-6">
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home
+                        <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pomodoro.html">Pomodoro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="studySkills.html">Study Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatBot.html">Duck</a>
+                    </li>                    
+                    </ul>
+                </div>
+                </div>
+            </nav> 
+        </div>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-dismissible alert-info" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="mb-5 small text-center text-muted">
+            <p>Special thanks to:
+                David Malan and CS50 staff for the wonderful course and making it free and accessible for everyone,
+                Thomas Park for the Minty Bootswatch theme,
+                all the strangers on the internet who kindly share their knowledges and help others,
+                Dan Reid for the "Thou Shalt Not Forget" handout,
+                and myself for not giving up when my codes gave up on me every other minute.
+            </p>
+        </footer>
+    </body>
+</html>

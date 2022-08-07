@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Duck
+{% endblock %}
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    function botResponse() {
+        var userInput = $("#userInput").val();
+
+        // Validate user input
+        if(userInput == ""){
+            var botHtml = '<img src="/static/duck.jpg" alt="Avatar" class="botAvatar">' +
+            '<p class="botText">' + "Your loyal Ducky is patiently waiting for you." + '</p>';
+            $("#chatbox").append(botHtml);
+        }
+
+        // Inserts user and bot texts and clear input field
+        else {
+            var userHtml = '<img src="/static/angry.jpg" alt="Avatar" class="userAvatar">' +
+                '<p class="userText">' + userInput + '</p>';
+            $("#chatbox").append(userHtml);
+            document.getElementById('userInput').value = null;
+
+            var botHtml = '<img src="/static/duck.jpg" alt="Avatar" class="botAvatar">' +
+                '<p class="botText">' + "Quack." + '</p>';
+            $("#chatbox").append(botHtml);
+        }
+    }
+
+    document.getElementById("send").onclick = function(e) {
+        e.preventDefault();
+        botResponse();
+    }
+})
+</script>
+{% endblock %}
+
+
+{% block main %}
+<p>When you feel frustrated and upset about a problem and start questioning if you should be in this class, talk to Ducky! <br>
+    Talk about it and teach it to Ducky. Ducky will show you the way and always have your back.
+</p>
+
+<!-- This is the container where text messages are being added to-->
+<div class="bigContainer" id="chatbox"></div>
+
+<!-- Input-append puts input and button in the same line and next to each other-->
+<div class="container">
+    <div class="input-append">
+    <form action='/chatBot.html' method="POST" >
+            <input type="text" id="userInput" name="userInput" autocomplete="off" placeholder="Enter your message here.">
+            <button type="submit" id="send" class="btn btn-primary">Send</button>
+    </form>
+    </div>
+</div>
+{% endblock %}

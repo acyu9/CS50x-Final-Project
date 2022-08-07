@@ -1,0 +1,11 @@
+{
+    "Which of the following has a weaker Coulombic attraction and thus a lower ionization energy?" : ["K", "Na", "Cl", "Br"],
+    "Lattice energy is the energy to..." : ["break ionic bond", "break covalent bond", "form ionic bond", "form covalent bond"],
+    "Which technique separates mixtures based on difference in boiling points?" : ["distillation", "chromatography", "titration", "gravimetric analysis"],
+    "Select the hybrid orbital for CH4." : ["sp3", "sp2", "sp", "sp4"],
+    "Which of the following is true regarding metallic bonds?" : ["between metal and nonmetal", "always conduct electricity", "all hard", "between 2 nonmetals"],
+    "Why does dispersion force get stronger as the molecule gets bigger?" : ["larger e- cloud, more polarizable", "larger e- cloud, less polarizable", "smaller e- cloud, more polarizable", "smaller e- cloud, less polarizable"],
+    "When a molecular solid melts..." : ["intermolecular force breaks", "intramolecular force breaks", "intermolecular force forms", "intramolecular force forms"],
+    "Idea gases are..." : ["small and nonpolar", "small and polar", "big and nonpolar", "big and polar"],
+    "To prepare 1L of solution, what's the most precise equipment to use?" : ["volumetric flask", "flask", "beaker", "graduated cylinder"]
+}

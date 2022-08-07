@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz
+{% endblock %}
+
+{% block main %}
+<div class="container" id="quiz">
+    <h3>Directions:</h3>
+            <p>Study the "Thou Shalt Not Forget" before quizzing yourself. Good luck!</p> <br>
+</div>
+
+<form action="/quiz.html" method="POST">
+    <p class="text-danger"><b>{{message}}</b></p>
+    <div id="buttons_container">
+        <ol>
+            {% for i in shuffled %}
+                <li><b>{{i}}</b></li>
+                {% for j in original[i] %}
+                    <input type="radio" value="{{j}}" name="{{i}}" required/>{{j}}
+                {% endfor %}
+            {% endfor %}
+        </ol>
+    </div>
+    <div id="buttons_container">
+    <button type="submit" class="btn btn-secondary">Submit</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+[
+    "1. I study where it is quiet and has few distractions.",
+    "2. I study for a length of time then take a short break before returning to studying.",
+    "3. I set study goals, such as the number of problems I will do or pages I will read.",
+    "4. I study at least two hours for every hour I am in class each week.",
+    "5. I use a to-do list and/or planner to keep track of my academic and personal activities.",
+    "6. I start studying for quizzes and tests at least several days before I take them.",
+    "7. I have enough time for school and fun.",
+    "8. I take notes during class lectures.",
+    "9. I rework, rewrite, or type up my notes.",
+    "10. I try to study during my personal peak energy time to increase my concentration level.",
+    "11. I quiz myself over material that could appear on future exams and quizzes.",
+    "12. I say difficult concepts out loud in order to understand them better.",
+    "13. I summarize my notes into my own words, for better understanding.",
+    "14. I try to create associations between new material and information I already know.", 
+    "15. When I don’t understand something, I get help from tutors, classmates, and my instructors.",
+    "16. I do all homework assignments and turn them in on time.",
+    "17. I can easily identify what I have learned and what I have not yet learned before I take a test.",
+    "18. I anticipate what possible questions may be asked on my tests and make sure I know the answers."
+]
