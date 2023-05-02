@@ -4,11 +4,14 @@ from flask import Flask, render_template, flash, request, jsonify, redirect, url
 import random, copy
 import json
 from markupsafe import Markup
+from os.path import join, dirname, realpath
 
 app = Flask(__name__)
 
 # Key needed for session where flash message is stored
 app.secret_key = 'super secret'
+
+ENC_PATH = join(dirname(realpath(__file__)), 'static\encouragement.txt')
 
 # Ensure responses aren't cached and have GET static 304 code
 @app.after_request
@@ -35,7 +38,7 @@ def shuffle(q):
 @app.route("/")
 def index():
     # Read data from the file as str
-    with open('.\static\encouragement.txt', encoding="utf-8") as f:
+    with open('ENC_PATH', encoding="utf-8") as f:
         messages = f.read()
 
     # Convert data to list
