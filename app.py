@@ -35,7 +35,7 @@ def shuffle(q):
 @app.route("/")
 def index():
     # Read data from the file as str
-    with open('static\encouragement.txt', encoding="utf-8") as f:
+    with open('.\static\encouragement.txt', encoding="utf-8") as f:
         messages = f.read()
 
     # Convert data to list
